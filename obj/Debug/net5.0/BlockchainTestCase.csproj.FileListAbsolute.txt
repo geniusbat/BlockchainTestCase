@@ -1,0 +1,16 @@
+C:\Users\PC\Documents\Proyectos\Programacion\BlockchainTestCase\obj\Debug\net5.0\BlockchainTestCase.csproj.AssemblyReference.cache
+C:\Users\PC\Documents\Proyectos\Programacion\BlockchainTestCase\obj\Debug\net5.0\BlockchainTestCase.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\PC\Documents\Proyectos\Programacion\BlockchainTestCase\obj\Debug\net5.0\BlockchainTestCase.AssemblyInfoInputs.cache
+C:\Users\PC\Documents\Proyectos\Programacion\BlockchainTestCase\obj\Debug\net5.0\BlockchainTestCase.AssemblyInfo.cs
+C:\Users\PC\Documents\Proyectos\Programacion\BlockchainTestCase\obj\Debug\net5.0\BlockchainTestCase.csproj.CoreCompileInputs.cache
+C:\Users\PC\Documents\Proyectos\Programacion\BlockchainTestCase\bin\Debug\net5.0\BlockchainTestCase.exe
+C:\Users\PC\Documents\Proyectos\Programacion\BlockchainTestCase\bin\Debug\net5.0\BlockchainTestCase.deps.json
+C:\Users\PC\Documents\Proyectos\Programacion\BlockchainTestCase\bin\Debug\net5.0\BlockchainTestCase.runtimeconfig.json
+C:\Users\PC\Documents\Proyectos\Programacion\BlockchainTestCase\bin\Debug\net5.0\BlockchainTestCase.runtimeconfig.dev.json
+C:\Users\PC\Documents\Proyectos\Programacion\BlockchainTestCase\bin\Debug\net5.0\BlockchainTestCase.dll
+C:\Users\PC\Documents\Proyectos\Programacion\BlockchainTestCase\bin\Debug\net5.0\ref\BlockchainTestCase.dll
+C:\Users\PC\Documents\Proyectos\Programacion\BlockchainTestCase\bin\Debug\net5.0\BlockchainTestCase.pdb
+C:\Users\PC\Documents\Proyectos\Programacion\BlockchainTestCase\obj\Debug\net5.0\BlockchainTestCase.dll
+C:\Users\PC\Documents\Proyectos\Programacion\BlockchainTestCase\obj\Debug\net5.0\ref\BlockchainTestCase.dll
+C:\Users\PC\Documents\Proyectos\Programacion\BlockchainTestCase\obj\Debug\net5.0\BlockchainTestCase.pdb
+C:\Users\PC\Documents\Proyectos\Programacion\BlockchainTestCase\obj\Debug\net5.0\BlockchainTestCase.genruntimeconfig.cache
