@@ -7,7 +7,8 @@ namespace BlockchainTestCase
         static void Main(string[] args)
         {
             Block bl = new Block();
-            bl.TryNonce();
+            Utilities.PrintByteArray(bl.GetHash());
+            bl.CheckValidBlock();
         }
     }
 }
