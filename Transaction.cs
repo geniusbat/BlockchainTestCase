@@ -27,6 +27,13 @@ namespace BlockchainTestCase
             sum = Utilities.AddLittleEndian(sum, BitConverter.GetBytes(amount));
             sign = sh.ComputeHash(sum);
         }
+        public Transaction(byte[] fr, byte[] t, int am, int idI)
+        {
+            from = fr;
+            to = t;
+            id = idI;
+            amount = am;
+        }
         public byte[] GetSign()
         {
             return sign;
@@ -36,6 +43,14 @@ namespace BlockchainTestCase
         {
             sign = input;
             return true;
+        }
+        //Return sum to be signed
+        public byte[] Sum()
+        {
+            byte[] sum = Utilities.AddLittleEndian(from, to);
+            sum = Utilities.AddLittleEndian(sum, BitConverter.GetBytes(id));
+            sum = Utilities.AddLittleEndian(sum, BitConverter.GetBytes(amount));
+            return sum;
         }
     }
 }

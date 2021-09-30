@@ -52,5 +52,31 @@ namespace BlockchainTestCase
             Console.Write("]");
             Console.WriteLine("");
         }
+        public static bool BlockchainContainsTransaction(List<Block> blockchain, int id)
+        {
+            bool inside = false;
+            foreach(Block bl in blockchain)
+            {
+                if (TransactionListContainsTransaction(bl.transactions, id))
+                {
+                    inside = true;
+                    break;
+                }
+            }
+            return inside;
+        }
+        public static bool TransactionListContainsTransaction(List<Transaction> transactionList, int id)
+        {
+            bool inside = false;
+            foreach(Transaction tr in transactionList)
+            {
+                if (tr.id==id)
+                {
+                    inside = true;
+                    break;
+                }
+            }
+            return inside;
+        }
     }
 }

@@ -9,10 +9,10 @@ namespace BlockchainTestCase
 {
     class Block
     {
-        private long timeStamp;
+        public long timeStamp;
         private byte[] nonce;
-        private byte[] prevHash;
-        List<Transaction> transactions;
+        public byte[] prevHash;
+        public List<Transaction> transactions;
         public Block()
         {
             timeStamp = DateTimeOffset.Now.ToUnixTimeSeconds();
@@ -25,15 +25,22 @@ namespace BlockchainTestCase
             //rd.NextBytes(nonce);
             rd.NextBytes(prevHash);
         }
-        public bool TryNonce()
+        public Block(List<Transaction> transactionsQueue, byte[] prHash)
+        {
+            timeStamp = DateTimeOffset.Now.ToUnixTimeSeconds();
+            nonce = new byte[8];
+            prevHash = prHash;
+            transactions = transactionsQueue;
+            nonce = new byte[32];
+        }
+        public bool NextNonce()
         {
             byte[] one = new byte[1];
             one[0] = 1;
             //Utilities.PrintByteArray(nonce);
             nonce = Utilities.AddLittleEndian(nonce, one);
             //Utilities.PrintByteArray(nonce);
-            CheckValidBlock();
-            return false;
+            return CheckValidBlock();
         }
         public byte[] GetHash()
         {
@@ -45,22 +52,10 @@ namespace BlockchainTestCase
             }
             return sum;
         }
-        public void CheckValidBlock()
+        public bool CheckValidBlock()
         {
             byte[] hash = GetHash();
-            /*
-            BitArray dif = new BitArray(32);
-            Console.WriteLine(hash[0]);
-            byte[] f = new byte[(dif.Length - 1) / 8 + 1];
-            dif.CopyTo(f, 0);
-            Console.WriteLine(f.Length);
-            Console.WriteLine(f[1]);
-            PrintValues(dif,32);
-            PrintValues(new BitArray(hash[0]),32);
-            Console.WriteLine(dif.Length);
-            Console.WriteLine(new BitArray(hash[0]).Length);
-            */
-            //Difficulty is based on the first 32 bits of the hash having 20 or more 0s
+            //Difficulty is based on the first 32 bits of the hash having 15 or more 0s
             BitArray bits = new BitArray(hash);
             int c = 0;
             for (int i = 0; i < 32; i++)
@@ -69,20 +64,18 @@ namespace BlockchainTestCase
                 {
                     c++;
                 }
-                //Console.WriteLine(bits.Get(i));
             }
-            Console.WriteLine(c);
-            Console.WriteLine(PrintValues(bits,true));
             bool valid;
-            if (c>19)
+            if (c>14)
             {
                 valid = true;
             }
             else
             {
+                //Console.WriteLine("Block wasn't valid due to no fulfilling predicate, with only " + c + " ceros");
                 valid = false;
             }
-            Console.WriteLine(valid);
+            return valid;
 
         }
         public static string PrintValues(BitArray bits,bool max32=false)
