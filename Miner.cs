@@ -12,6 +12,7 @@ namespace BlockchainTestCase
         public byte[] id;
         List<Block> blockchain;
         byte[] emptyHash = new byte[32]; //Sample hash to compare to possible hashes, this hash should only be used in the first block of the chain
+        private bool stopSearching = false;
         private List<Miner> miners;
         private List<User> users;
         private bool listen = false;
@@ -57,6 +58,12 @@ namespace BlockchainTestCase
         {
             while(listen)
             {
+                if (stopSearching)
+                {
+                    stopSearching = false;
+                    listen = false;
+                    break;
+                }
                 if (transactionQueue.Count > 0)
                 {
                     Block bl = Mine();
@@ -73,13 +80,13 @@ namespace BlockchainTestCase
                             }
                         }
                         if (valid) {
-                            Console.WriteLine("Block found");
+                            Console.WriteLine("Block found by: "+Utilities.ByteArrayToString(id));
                             blockchain.Add(bl);
+                            Utilities.PrintBlockchain(blockchain);
                             //Broadcast to nearby miners
                             foreach (Miner mn in miners)
                             {
                                 mn.UpdateBlockchain(blockchain);
-                                Console.WriteLine("Blockchain Updated");
                             }
                             //Broadcast to nearby users
                             foreach (Transaction tr in transactionQueue)
@@ -101,12 +108,13 @@ namespace BlockchainTestCase
         {
             if (newBlockChain.Count>blockchain.Count)
             {
-                Console.WriteLine("New blockchain set");
+                //Console.WriteLine("New blockchain set");
+                stopSearching = true;
                 blockchain = newBlockChain;
             }
             else if (newBlockChain.Count==blockchain.Count)
             {
-                Console.WriteLine("Some transactions met");
+                //Console.WriteLine("Some transactions met");
                 //Quit from queue all transactions covered in the new blockchain
                 foreach (Transaction tr in transactionQueue)
                 {
@@ -115,6 +123,7 @@ namespace BlockchainTestCase
                         transactionQueue.Remove(tr);
                     }
                 }
+                stopSearching = true;
             }
         }
         public void AssignTransaction(Transaction tr)

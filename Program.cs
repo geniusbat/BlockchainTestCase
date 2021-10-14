@@ -5,7 +5,7 @@ namespace BlockchainTestCase
 {
     class Program
     {
-        //TODO: Display blockchain
+        //Errors with timing and first block being empty due to same transaction appearing later in the chain
         static void Main(string[] args)
         {
             Random rd = new Random();
@@ -23,6 +23,8 @@ namespace BlockchainTestCase
             minerA.SetUsers(users);
             minerB.SetMiners(miners);
             minerB.SetUsers(users);
+            userA.CreateRandomTransaction(userB);
+            userA.CreateRandomTransaction(userB);
             userA.CreateRandomTransaction(userB);
         }
     }

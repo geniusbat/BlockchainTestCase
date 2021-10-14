@@ -1,23 +1,24 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\PC\\Documents\\Proyectos\\Programacion\\BlockchainTestCase\\BlockchainTestCase.csproj": {}
+    "E:\\Proyectos\\Programación\\BlockchainTestCase\\BlockchainTestCase.csproj": {}
   },
   "projects": {
-    "C:\\Users\\PC\\Documents\\Proyectos\\Programacion\\BlockchainTestCase\\BlockchainTestCase.csproj": {
+    "E:\\Proyectos\\Programación\\BlockchainTestCase\\BlockchainTestCase.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\PC\\Documents\\Proyectos\\Programacion\\BlockchainTestCase\\BlockchainTestCase.csproj",
+        "projectUniqueName": "E:\\Proyectos\\Programación\\BlockchainTestCase\\BlockchainTestCase.csproj",
         "projectName": "BlockchainTestCase",
-        "projectPath": "C:\\Users\\PC\\Documents\\Proyectos\\Programacion\\BlockchainTestCase\\BlockchainTestCase.csproj",
-        "packagesPath": "C:\\Users\\PC\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\PC\\Documents\\Proyectos\\Programacion\\BlockchainTestCase\\obj\\",
+        "projectPath": "E:\\Proyectos\\Programación\\BlockchainTestCase\\BlockchainTestCase.csproj",
+        "packagesPath": "C:\\Users\\Tytan\\.nuget\\packages\\",
+        "outputPath": "E:\\Proyectos\\Programación\\BlockchainTestCase\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
-          "C:\\Users\\PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Tytan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
@@ -26,7 +27,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://packages.xenko.com/nuget": {}
         },
         "frameworks": {
           "net5.0": {
@@ -58,7 +60,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

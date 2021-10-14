@@ -52,6 +52,21 @@ namespace BlockchainTestCase
             Console.Write("]");
             Console.WriteLine("");
         }
+        public static String ByteArrayToString(byte[] a)
+        {
+            String rt = "[";
+            for (int i = a.Length - 1; i >= 0; i--)
+            {
+                if (i != a.Length - 1)
+                {
+                    rt += ", ";
+                }
+                byte item = a[i];
+                rt += item;
+            }
+            rt += "]";
+            return rt;
+        }
         public static bool BlockchainContainsTransaction(List<Block> blockchain, int id)
         {
             bool inside = false;
@@ -77,6 +92,20 @@ namespace BlockchainTestCase
                 }
             }
             return inside;
+        }
+        public static void PrintBlockchain(List<Block> blockchain)
+        {
+            foreach(Block bl in blockchain)
+            {
+                Console.WriteLine("Hash: "+ ByteArrayToString(bl.GetHash()));
+                Console.WriteLine("Previous: "+ ByteArrayToString(bl.prevHash));
+                Console.WriteLine("With transactions: ");
+                foreach(Transaction tr in bl.transactions)
+                {
+                    Console.WriteLine(tr.id+": "+ByteArrayToString(tr.from)+" --> "+ByteArrayToString(tr.to)+ " , amount: "+tr.amount);
+                }
+                Console.WriteLine();
+            }
         }
     }
 }
